@@ -1,5 +1,5 @@
 // Created To Run On Dosbox Only //
-
+// !!! Must Set bgi Path According To their .bgi Directory before starting //
 
 #include<iostream.h>
 #include<conio.h>
@@ -13,6 +13,9 @@
 #include<fstream.h>
 #include<graphics.h>
 #include<time.h>
+
+// .bgi path initialization 
+char *bgi="c:\\turboc3\\bgi";
 
 //Some global Variables used in program
 int totalaccounts=0,pass;
@@ -562,7 +565,7 @@ void sbimenu()
 	design();
 	cout<<'\n'<<'\n'<<'\t'<<"ACCOUNT SERVICES                                    Press -> 1";
 	cout<<'\n'<<'\n'<<'\t'<<"ADMINISTRATOR SERVICES                              Press -> 2";
-	cout<<'\n'<<'\n'<<'\t'<<"Re-Initialize Default Records                       Press -> 3";
+	cout<<'\n'<<'\n'<<'\t'<<"Re-ialize Default Records                       Press -> 3";
 	cout<<'\n'<<'\n'<<'\t'<<"Sort Out Accounts                                   Press -> 4";
 
 	//cout<<'\n'<<'\n'<<'\t'<<"RESET ADMIN LOGIN DETAILS                           (Press R) ";
@@ -1485,7 +1488,7 @@ int recaptcha()
 	int count=1;
 	again:
 	int gd=DETECT,gm;
-	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	initgraph(&gd,&gm,bgi);
 	cleardevice();
 	int xc,yc;
 	xc=getmaxx()/2;
@@ -2264,7 +2267,7 @@ void mab_charges()
 void home()
 {
 	int gd=DETECT,gm;
-	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	initgraph(&gd,&gm,bgi);
 	cleardevice();
 	rect_loading();
 	door();
